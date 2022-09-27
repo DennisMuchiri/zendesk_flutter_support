@@ -1,7 +1,7 @@
-name: zendesk_flutter_combination
-description: A new Flutter project.
+name: endesk_flutter_support
+description: A support implementation of zendesk classic sdk with helpcenter, request/ticket list and new ticket/request
 version: 0.0.1
-homepage:
+homepage: https://github.com/DennisMuchiri/zendesk_flutter_support
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
