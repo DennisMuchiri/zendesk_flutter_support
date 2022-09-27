@@ -1,0 +1,73 @@
+group 'com.dennis.zendeskfluttercombination.zendesk_flutter_combination'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        google()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        //classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        /*google()
+        mavenCentral()
+        maven { url 'https://zendesk.jfrog.io/zendesk/repo' }*/
+
+        google()
+        mavenCentral()
+        maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com/' }
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+}
+
+repositories {
+    google()
+    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
+    maven { url 'https://maven.google.com' }
+    mavenCentral()
+
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api group: 'com.zendesk', name: 'messaging', version: '5.1.0'
+    api group: 'com.zendesk', name: 'support', version: '5.0.2'
+    api group: 'com.zendesk', name: 'answerbot', version: '3.0.1'
+    api group: 'com.zendesk', name: 'chat', version: '3.2.0'
+}
