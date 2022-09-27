@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* A support implementation of zendesk classic sdk with helpcenter, request/ticket list and new ticket/request
