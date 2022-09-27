@@ -1,4 +1,4 @@
-name: endesk_flutter_support
+name: zendesk_flutter_combination
 description: A support implementation of zendesk classic sdk with helpcenter, request/ticket list and new ticket/request
 version: 0.0.1
 homepage: https://github.com/DennisMuchiri/zendesk_flutter_support
